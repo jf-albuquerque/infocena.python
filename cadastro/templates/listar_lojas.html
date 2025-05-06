@@ -6,6 +6,25 @@
     <title>Lojas</title>
 </head>
 <body>
-    <h1>lOJAS</h1>
+    <h1>LOJAS</h1>
+    <div>
+    <a href="{% url 'incluir_lojas'%}">Incluir</a>
+    <table>
+        <thead>
+            <tr>Nome</tr>
+            <tr>Telefone</tr>
+            <tr>Ações</tr>
+        </thead>
+    </div>
+        <tbody>
+            {% for l in lojas%}
+            <tr>
+                <td>{{ l.nome }}</td>
+                <td>{{ l.telefone }}</td>
+                <td>Alterar Excluir</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
