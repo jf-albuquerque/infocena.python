@@ -1,6 +1,8 @@
 from django import forms
 
 from cadastro.models import Loja
+    
+
 
 class LojaForm(forms.ModelForm):
     class Meta:
