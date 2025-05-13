@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojas</title>
+</head>
+<body>
+    <h1>Produtos</h1>
+    <div>
+    <a href="{% url 'incluir_produtos'%}">Incluir</a>
+    <table>
+        <thead>
+            <tr>Nome</tr>
+            <tr>Preço</tr>
+        </thead>
+    </div>
+
+        <tbody>
+            {% for l in produtos%}
+   
+            <tr>
+                <td>{{ l.nome }}</td>
+                <td>{{ l.preco }}</td>
+                <td><a href="{% url 'alterar_produtos' l.id %}"> Alterar</a>
+                    <a href="{% url 'excluir_produtos' l.id %}" onclick="return excluir()"> Excluir</a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+<script>
+    function excluir(){
+       return confirm("Deseja excluir?");
+    }
+</script>
+</html> 
