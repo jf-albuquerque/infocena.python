@@ -11,6 +11,6 @@ urlpatterns = [
     path('incluir_produtos', views.incluir_produtos, name='incluir_produtos'),
     path('alterar_produtos/<int:codigo>', views.alterar_produtos, name ='alterar_produtos'),
     path('excluir_produtos/<int:codigo>', views.excluir_produtos, name='excluir_produtos'),
-   
+    path('area_interna', views.area_interna, name='area_interna'),
 ]
 

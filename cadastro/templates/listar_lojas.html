@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lojas</title>
-</head>
-<body>
+{% extends 'interna.html' %}
+
+{% block content %}
     <h1>LOJAS</h1>
     <div>
     <a href="{% url 'incluir_lojas'%}">Incluir</a>
+    <a href="{% url 'index'%}">Voltar</a>
     <table>
         <thead>
-            <tr>Nome</tr>
-            <tr>Telefone</tr>
-            <tr>Ações</tr>
+        <tr>
+            <td>Nome</td>
+            <td>Telefone</td>
+            <td>Ações</td>
+        </tr>
         </thead>
     </div>
 
@@ -29,10 +27,5 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
-<script>
-    function excluir(){
-       return confirm("Deseja excluir?");
-    }
-</script>
-</html> 
+    {% endblock %}
+

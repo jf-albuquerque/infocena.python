@@ -81,3 +81,6 @@ def excluir_produtos(request, codigo):
     Produtos.delete(produtos)
 
     return redirect('listar_produtos')
+
+def area_interna(request):
+    return render(request, 'area_interna.html')
