@@ -2,15 +2,15 @@
 
 {% block content %}
     <h1>Produtos</h1>
-    <div>
+  
         <tr>
-        <td><a href="{% url 'incluir_produtos'%}">Incluir</a></td>
-        <td><a href="{% url 'index'%}">Voltar</a></td>
+        <td><a href="{% url 'incluir_produtos'%}" class="btn btn-primary">Incluir</a></td>
+        <td><a href="{% url 'index'%}" class="btn btn-secondary">Voltar a pagina</a></td>
     </tr>
-    </div>
-    <table>
+  
+    <table class="table table-striped">
         <thead>
-            <tr>
+            
                 <td>Nome</td>
 
                 <td>Preço</td>
@@ -24,8 +24,8 @@
             <tr>
                 <td>{{ l.nome }}</td>
                 <td>{{ l.preco }}</td>
-                <td><a href="{% url 'alterar_produtos' l.id %}"> Alterar</a></td>
-                <td><a href="{% url 'excluir_produtos' l.id %}" onclick="return excluir()"> Excluir</a> </td>
+                <td><a href="{% url 'alterar_produtos' l.id %}" class="btn btn-secondary"> Alterar</a></td>
+                <td><a href="{% url 'excluir_produtos' l.id %}" onclick="return excluir()" class="btn btn-danger"> Excluir</a> </td>
             </tr>
             {% endfor %}
         </tbody>

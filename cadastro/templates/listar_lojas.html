@@ -2,28 +2,30 @@
 
 {% block content %}
     <h1>LOJAS</h1>
-    <div>
-    <a href="{% url 'incluir_lojas'%}">Incluir</a>
-    <a href="{% url 'index'%}">Voltar</a>
-    <table>
+    <a href="{% url 'incluir_lojas'%}" class="btn btn-primary">Incluir</a>
+    <a href="{% url 'index'%}" class="btn btn-secondary">Voltar a pagina</a>
+    <table class="table table-striped">
         <thead>
+           
         <tr>
             <td>Nome</td>
             <td>Telefone</td>
             <td>Ações</td>
         </tr>
         </thead>
-    </div>
-
+  
         <tbody>
             {% for l in lojas%}
    
             <tr>
                 <td>{{ l.nome }}</td>
                 <td>{{ l.telefone }}</td>
-                <td><a href="{% url 'alterar_loja' l.id %}"> Alterar</a>
-                    <a href="{% url 'excluir_loja' l.id %}" onclick="return excluir()"> Excluir</a> </td>
-            </tr>
+                <td><a href="{% url 'alterar_loja' l.id %}" class="btn btn-secondary"> Alterar </a> 
+                    <!---->
+                    <a href="{% url 'excluir_loja' l.id %}" onclick="return excluir()"  class="btn btn-danger"> Excluir </a>
+                </td>
+            </tr>    
+
             {% endfor %}
         </tbody>
     </table>

@@ -10,7 +10,7 @@ class LojaForm(forms.ModelForm):
         fields = '__all__'
 
 class ProdutosForm(forms.ModelForm):
-    nome = forms.CharField(label="Nome do Produto ")
+    nome = forms.CharField(label="Nome do Produto " )
     preco = forms.DecimalField(label="Preço ")
     destaque = forms.BooleanField(label="Aparecer no site ?")
     class Meta:
