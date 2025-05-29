@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from Site.forms import Aluquelform, Clienteform, FaleConoscoform
 
 from cadastro.models import Loja, Produtos
 from django.db.models.functions import Lower
@@ -18,6 +19,33 @@ def lojas(request):
     lojas = Loja.objects.order_by(Lower('nome'))
     return render(request, 'lojas.html', {'lojas': lojas})
 
-def FaleConosco(request):
-    form = fale_ConoscoForm()
-    return = render(resquest,'fale_conosco.html',)
+def faleConosco(request):
+    if request.method == 'POST':
+       form = FaleConoscoform(request.POST)
+       if form.is_valid():
+           form.save()
+
+           return index(request)
+    form = FaleConoscoform()
+    return render(request, 'fale_conosco.html', {'formulario': form})
+
+def aluquel(request):
+    if request.method == 'POST':
+       form = Aluquelform(request.POST)
+       if form.is_valid():
+           form.save()
+           return index(request)
+    form = Aluquelform()
+    return render(request, 'aluquel.html', {'formulario': form})
+       
+def cadastro(request):
+    if request.method == 'POST':
+       form = Clienteform(request.POST)
+       if form.is_valid():
+           form.save()
+           return index(request)
+       
+    form = Clienteform()
+    return render(request, 'cadastro.html', {'formulario': form})
+    
+    
