@@ -1,8 +1,9 @@
 {% extends 'principal.html' %}
 {% block content %}
+ <div class="estilo-pagina">
   <h1>Lojas</h1>
   {% for p in lojas %}
      <P> Loja: {{p.nome}} stand: {{p.numero}} contato: {{p.telefone}}.  </P>
-
+    </div>
   {% endfor%}
 {% endblock %}

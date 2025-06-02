@@ -1,5 +1,6 @@
 p {
     margin: 10px 10px 10px 10px;
+    background-color: rgb(13, 102, 180);
 }
 
 #especial {
@@ -9,7 +10,8 @@ p {
 }
 
 .diferente{
-    color: #00ffcc;
+    color: #16da47;
+    background-color: aliceblue;
 }
 
 img {
@@ -24,4 +26,24 @@ a {
 div {
     width: 50%;
     display: inline-block;
+}
+
+.estilo-pagina {
+    background-image: url(../imagem-de-fundo/fundo-futurista.pjg.avif);
+    
+  
+}
+
+
+.quem-somos{
+    background-color: rgb(33, 108, 173);
+}
+footer{
+    background-color: rgb(82, 16, 182);
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
 }

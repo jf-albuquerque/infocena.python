@@ -1,6 +1,7 @@
 {% extends 'interna.html' %}
 
 {% block content %}
+<div class="estilo-pagina">
     <h1>LOJAS</h1>
     <a href="{% url 'incluir_lojas'%}" class="btn btn-primary">Incluir</a>
     <a href="{% url 'index'%}" class="btn btn-secondary">Voltar a pagina</a>
@@ -25,7 +26,7 @@
                     <a href="{% url 'excluir_loja' l.id %}" onclick="return excluir()"  class="btn btn-danger"> Excluir </a>
                 </td>
             </tr>    
-
+        </div>
             {% endfor %}
         </tbody>
     </table>

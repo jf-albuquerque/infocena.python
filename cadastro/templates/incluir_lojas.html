@@ -2,10 +2,12 @@
 
 {% block content %}
 {% load django_bootstrap5 %}
+<div class="estilo-pagina">
     <form method="post">
       {% bootstrap_form formulario %}  
       {% csrf_token %}
       <input type="submit" value="Gravar"/>
       <input type="reset"  value="Limpar"/>
     </form>
+</div>
 {% endblock%}
